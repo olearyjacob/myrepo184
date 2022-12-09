@@ -3,8 +3,22 @@ title: "GitHub Example 1"
 output: html_notebook
 ---
 
+## Front Matter
+```{r}
+library(tidyverse)
+```
+
+
 # Create some plot
 ```{r}
 plot(cars, xlab="Speed in mph")
+```
+
+## Create new plot using ggplot
+```{r}
+ggplot(data=cars, mapping=aes(x=speed, y=dist)) +
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE) +
+  labs(x="Speed", y="Stopping Distance")
 ```
 
